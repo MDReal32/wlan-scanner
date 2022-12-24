@@ -6,6 +6,23 @@ void WifiAccessPoint::print_access_point() {
   printf("Access point name: %s\n", WifiAccessPoint::access_point_name);
 }
 
+int WifiAccessPoint::get_access_point_json_length() {
+  return 57 + strlen(WifiAccessPoint::access_point_name) + strlen(WifiAccessPoint::mac_address) +
+         (WifiAccessPoint::is_hidden ? 4 : 5);
+}
+
+const char *WifiAccessPoint::get_access_point_json() {
+//  int json_length = WifiAccessPoint::get_access_point_json_length();
+//  char *json = new char[json_length];
+
+
+//  sprintf(json, R"({ "accessPointName": "%s", "macAddress": "%s", "isHidden": %s })",
+//          WifiAccessPoint::access_point_name, WifiAccessPoint::mac_address,
+//          WifiAccessPoint::is_hidden ? "true" : "false");
+//  return json;
+return "";
+}
+
 char *WifiAccessPoint::get_access_point_name() {
   return WifiAccessPoint::access_point_name;
 }
