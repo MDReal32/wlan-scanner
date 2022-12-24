@@ -10,8 +10,8 @@ char *WifiAccessPoint::get_access_point_name() {
   return WifiAccessPoint::access_point_name;
 }
 
-void WifiAccessPoint::set_access_point_name(char *apn) {
-  WifiAccessPoint::access_point_name = apn;
+void WifiAccessPoint::set_access_point_name(char *accessPointName) {
+  WifiAccessPoint::access_point_name = accessPointName;
 }
 
 char *WifiAccessPoint::get_mac_address() {
