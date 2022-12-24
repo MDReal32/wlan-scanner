@@ -4,6 +4,7 @@
 
 int main(int argc, char *argv[]) {
   bool is_dev_mode = exists_in_arg(argc, argv, "--dev");
+  bool is_json_mode = exists_in_arg(argc, argv, "--json");
 
   char *ifname = get_ifname();
   WifiAccessPoints* wifiAccessPoints = scan_wireless_network(ifname);
@@ -13,6 +14,9 @@ int main(int argc, char *argv[]) {
     printf("Found %d access point%s\n", wifiAccessPoints->size, wifiAccessPoints->size == 1 ? "" : "s");
   }
 
+  if (is_json_mode && !is_dev_mode) {
+
+  }
 
 //  for (int i = 0; i < wifiAccessPoints.size; i++) {
 //    wifiAccessPoints.wifi_access_points[i]->print_access_point();
