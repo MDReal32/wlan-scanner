@@ -14,8 +14,9 @@ add_executable(wlan_scanner2
         src/core/scan_wireless_network.cpp src/core/scan_wireless_network.h
 
         src/helpers/wifi_access_point.cpp src/helpers/wifi_access_point.h
+        src/helpers/get_access_points_json.cpp src/helpers/get_access_points_json.h
 
         src/utils/string_starts_with.cpp src/utils/string_starts_with.h
-        )
+        src/utils/exists_in_arg.cpp src/utils/exists_in_arg.h)
 
 find_package("Libiw")
