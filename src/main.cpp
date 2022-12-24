@@ -1,15 +1,6 @@
 #include "core/get_ifname.h"
 #include "core/scan_wireless_network.h"
-
-bool exists_in_arg(int argc, char *argv[], char *arg) {
-  for (int i = 0; i < argc; i++) {
-    if (strcmp(argv[i], arg) == 0) {
-      return true;
-    }
-  }
-
-  return false;
-}
+#include "utils/exists_in_arg.h"
 
 int main(int argc, char *argv[]) {
   bool is_dev_mode = exists_in_arg(argc, argv, "--dev");
