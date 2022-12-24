@@ -1,7 +1,7 @@
 #include "./scan_wireless_network.h"
 
 
-WifiAccessPoints* scan_wireless_network(char *ifname) {
+WifiAccessPoints *scan_wireless_network(char *ifname) {
   printf("Scanning wireless network on interface %s\n\n", ifname);
 
   wireless_scan_head head;
@@ -10,7 +10,7 @@ WifiAccessPoints* scan_wireless_network(char *ifname) {
   struct ifreq s;
   int sock;
 
-  WifiAccessPoints* wifi_access_points;
+  WifiAccessPoints *wifi_access_points;
   int idx = 0;
 
   sock = iw_sockets_open();
@@ -34,11 +34,9 @@ WifiAccessPoints* scan_wireless_network(char *ifname) {
     puts("\n");
   }
 
-
-//  wifi_access_points = new WifiAccessPoints();
   result = head.result;
   while (NULL != result) {
-//    auto* wifi_access_point = new WifiAccessPoint();
+//    WifiAccessPoint *wifi_access_point;
 //    wifi_access_point->set_access_point_name(result->b.essid);
 //    wifi_access_points->wifi_access_points[idx] = wifi_access_point;
 
