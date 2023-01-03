@@ -15,10 +15,10 @@ add_executable(wlan_scanner
 
         cpp/core/get_ifname.cpp cpp/core/get_ifname.h
         cpp/core/scan_wireless_network.cpp cpp/core/scan_wireless_network.h
-
         cpp/helpers/wifi_access_point.cpp cpp/helpers/wifi_access_point.h
-
-        cpp/utils/exists_in_arg.cpp cpp/utils/exists_in_arg.h)
+        cpp/utils/exists_in_arg.cpp cpp/utils/exists_in_arg.h
+        cpp/core.cpp cpp/core.h
+)
 
 find_package("Libiw")
 
