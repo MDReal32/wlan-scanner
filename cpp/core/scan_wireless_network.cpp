@@ -5,10 +5,11 @@ WifiAccessPoints *scan_wireless_network(string &ifname) {
   wireless_scan_head head;
   wireless_scan *result;
   iwrange range;
-  struct ifreq s{};
-  int sock;
 
+  struct ifreq s{};
   auto *wifi_access_points = new WifiAccessPoints();
+
+  int sock;
   int idx = 0;
 
   sock = iw_sockets_open();
