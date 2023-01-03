@@ -2,8 +2,9 @@
   "name": "wlan-scanner",
   "version": "1.0.0",
   "scripts": {
-    "build:node-gyp": "node-gyp rebuild",
-    "start:dev": "ts-node src/index.ts"
+    "build:node-gyp": "./scripts/build",
+    "start": "./scripts/start",
+    "start:dev": "./scripts/start-dev"
   },
   "dependencies": {
     "node-addon-api": "^5.0.0",
