@@ -2,40 +2,31 @@
 
 WifiAccessPoint::WifiAccessPoint() = default;
 
-void WifiAccessPoint::print_access_point() {
-  printf("Access point name: %s\n", WifiAccessPoint::access_point_name);
+string WifiAccessPoint::to_string() {
+  return "Access point name: " + WifiAccessPoint::access_point_name
+         + "; MAC address: " + WifiAccessPoint::mac_address
+         + "; Is hidden: " + (WifiAccessPoint::is_hidden ? "true" : "false") + "\n";
 }
 
-int WifiAccessPoint::get_access_point_json_length() {
-  return 57 + strlen(WifiAccessPoint::access_point_name) + strlen(WifiAccessPoint::mac_address) +
-         (WifiAccessPoint::is_hidden ? 4 : 5);
+string WifiAccessPoint::to_json() {
+  return R"({"access_point_name": ")" + WifiAccessPoint::access_point_name + R"(",)"
+         R"("mac_address": ")" + WifiAccessPoint::mac_address + R"(",)"
+         R"("is_hidden": ")" + (WifiAccessPoint::is_hidden ? "true" : "false") + R"("})";
 }
 
-const char *WifiAccessPoint::get_access_point_json() {
-//  int json_length = WifiAccessPoint::get_access_point_json_length();
-//  char *json = new char[json_length];
-
-
-//  sprintf(json, R"({ "accessPointName": "%s", "macAddress": "%s", "isHidden": %s })",
-//          WifiAccessPoint::access_point_name, WifiAccessPoint::mac_address,
-//          WifiAccessPoint::is_hidden ? "true" : "false");
-//  return json;
-return "";
-}
-
-char *WifiAccessPoint::get_access_point_name() {
+string WifiAccessPoint::get_access_point_name() {
   return WifiAccessPoint::access_point_name;
 }
 
-void WifiAccessPoint::set_access_point_name(char *accessPointName) {
+void WifiAccessPoint::set_access_point_name(string &accessPointName) {
   WifiAccessPoint::access_point_name = accessPointName;
 }
 
-char *WifiAccessPoint::get_mac_address() {
+string WifiAccessPoint::get_mac_address() {
   return WifiAccessPoint::mac_address;
 }
 
-void WifiAccessPoint::set_mac_address(char *macAddress) {
+void WifiAccessPoint::set_mac_address(string &macAddress) {
   WifiAccessPoint::mac_address = macAddress;
 }
 

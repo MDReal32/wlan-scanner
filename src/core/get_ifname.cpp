@@ -1,14 +1,16 @@
 #include "./get_ifname.h"
 
-char *get_ifname() {
+string prefix = "wlan";
+
+string get_ifname() {
   struct if_nameindex *if_nidxs, *intf;
   if_nidxs = if_nameindex();
-  const char *prefix = "wlan";
 
-  if (if_nidxs != NULL) {
-    for (intf = if_nidxs; intf->if_index != 0 || intf->if_name != NULL; intf++) {
-      char *ifname = intf->if_name;
-      if (string_starts_with(ifname, prefix)) {
+  if (if_nidxs != nullptr) {
+    for (intf = if_nidxs; intf->if_index != 0 || intf->if_name != nullptr; intf++) {
+      string ifname = intf->if_name;
+      if (ifname.starts_with(prefix)) {
+        if_freenameindex(if_nidxs);
         return ifname;
       }
     }
@@ -16,5 +18,5 @@ char *get_ifname() {
     if_freenameindex(if_nidxs);
   }
 
-  return NULL;
+  return nullptr;
 }

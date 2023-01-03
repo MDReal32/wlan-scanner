@@ -1,6 +1,7 @@
 #include <cstring>
+#include <iostream>
 #include <net/if.h>
 
-#include "../utils/string_starts_with.h"
+using namespace std;
 
-char *get_ifname();
+string get_ifname();

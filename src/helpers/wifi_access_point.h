@@ -1,24 +1,26 @@
+#include <iostream>
 #include <cstdio>
 #include <cstring>
 
+using namespace std;
+
 class WifiAccessPoint {
 private:
-    char *access_point_name{};
-    char *mac_address{};
+    string access_point_name{};
+    string mac_address{};
     bool is_hidden{};
 
 public:
     WifiAccessPoint();
 
-    void print_access_point();
-    int get_access_point_json_length();
-    const char *get_access_point_json();
+    string to_string();
+    string to_json();
 
-    char *get_access_point_name();
-    void set_access_point_name(char *apn);
+    string get_access_point_name();
+    void set_access_point_name(string &apn);
 
-    char *get_mac_address();
-    void set_mac_address(char *mac);
+    string get_mac_address();
+    void set_mac_address(string &mac);
 
     bool get_is_hidden();
     void set_is_hidden(bool isHidden);
