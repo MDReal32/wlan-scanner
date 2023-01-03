@@ -8,16 +8,6 @@
     <node-interpreter value="$USER_HOME$/.nvm/versions/node/v19.2.0/bin/node" />
     <package-manager value="yarn" />
     <envs />
-    <method v="2">
-      <option name="NpmBeforeRunTask" enabled="true">
-        <package-json value="$PROJECT_DIR$/package.json" />
-        <command value="run" />
-        <scripts>
-          <script value="build:node-gyp" />
-        </scripts>
-        <node-interpreter value="$USER_HOME$/.nvm/versions/node/v19.2.0/bin/node" />
-        <envs />
-      </option>
-    </method>
+    <method v="2" />
   </configuration>
 </component>
