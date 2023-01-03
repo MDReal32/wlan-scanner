@@ -10,8 +10,8 @@ option(ENABLE_NETWORK "Enable network support" ON)
 
 list(APPEND LIBRARIES -lstdc++)
 
-add_executable(wlan_scanner2
-        src/main.cpp
+add_executable(wlan_scanner
+        cpp/main.cpp
 
         cpp/core/get_ifname.cpp cpp/core/get_ifname.h
         cpp/core/scan_wireless_network.cpp cpp/core/scan_wireless_network.h
@@ -22,4 +22,4 @@ add_executable(wlan_scanner2
 
 find_package("Libiw")
 
-target_link_libraries(wlan_scanner2 ${LIBRARIES})
+target_link_libraries(wlan_scanner ${LIBRARIES})
