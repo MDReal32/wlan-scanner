@@ -4,6 +4,7 @@ project(wlan_scanner2)
 
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}/cmake/modules")
+set(LIBRARIES "")
 
 option(ENABLE_NETWORK "Enable network support" ON)
 
@@ -18,3 +19,5 @@ add_executable(wlan_scanner2
         src/utils/exists_in_arg.cpp src/utils/exists_in_arg.h)
 
 find_package("Libiw")
+
+target_link_libraries(wlan_scanner2 ${LIBRARIES})

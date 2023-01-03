@@ -17,12 +17,11 @@ find_package_handle_standard_args(Libiw DEFAULT_MSG LIBIW_LIBRARY LIBIW_INCLUDE_
 
 mark_as_advanced(LIBIW_INCLUDE_DIR LIBIW_LIBRARY)
 
-
 if (ENABLE_NETWORK)
     message(STATUS "Libiw found: ${LIBIW_FOUND}")
     if (LIBIW_FOUND)
         include_directories(${LIBIW_INCLUDE_DIR})
-        target_link_libraries(wlan_scanner2 ${LIBIW_LIBRARY})
+        list(APPEND LIBRARIES ${LIBIW_LIBRARY})
     else (LIBIW_FOUND)
         message(WARNING "${ANSI}[41;1mDisabling \"network module\" support (prerequisites failed)${ANSI}[0m")
         set(ENABLE_NETWORK OFF)
