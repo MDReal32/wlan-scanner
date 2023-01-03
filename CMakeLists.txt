@@ -23,3 +23,5 @@ add_executable(wlan_scanner
 find_package("Libiw")
 
 target_link_libraries(wlan_scanner ${LIBRARIES})
+target_include_directories(wlan_scanner PRIVATE ./node_modules/node-addon-api)
+target_include_directories(wlan_scanner PRIVATE ./node_modules/node-api-headers/include)
