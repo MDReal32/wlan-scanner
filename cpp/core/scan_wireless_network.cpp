@@ -35,6 +35,7 @@ WifiAccessPoints *scan_wireless_network(string &ifname) {
   result = head.result;
   while (nullptr != result) {
     string access_point_name = result->b.essid;
+    bool is_hidden = access_point_name.empty();
     string mac_address;
 
     for (int i = 0; i < 6; i++) {
@@ -47,6 +48,7 @@ WifiAccessPoints *scan_wireless_network(string &ifname) {
     auto *wifi_access_point = new WifiAccessPoint();
     wifi_access_point->set_access_point_name(access_point_name);
     wifi_access_point->set_mac_address(mac_address);
+    wifi_access_point->set_is_hidden(is_hidden);
     wifi_access_points->wifi_access_points[idx] = wifi_access_point;
 
     result = result->next;
