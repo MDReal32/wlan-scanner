@@ -1,0 +1,8 @@
+#!/usr/bin/sh
+
+FILE=../build/Release/wlan_scanner.node
+if [ -f $FILE ]; then
+  yarn node dist/index.js
+else
+  echo "Please run 'npm run build' first"
+fi
