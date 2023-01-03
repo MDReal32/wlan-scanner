@@ -11,20 +11,20 @@ int main(int argc, char *argv[]) {
   bool is_json_mode = exists_in_arg(argc, argv, "--json");
 
   string ifname = get_ifname();
-  WifiAccessPoints* wifiAccessPoints = scan_wireless_network(ifname);
+  WifiAccessPoints *wifi_access_points = scan_wireless_network(ifname);
 
   if (is_dev_mode) {
-    std::cout << "Scan completed:" << std::endl << "Found " << wifiAccessPoints->size << " access point" << (wifiAccessPoints->size == 1 ? "" : "s") << std::endl;
+    std::cout << "Scan completed:" << std::endl << "Found " << wifi_access_points->size << " access point"
+              << (wifi_access_points->size == 1 ? "" : "s") << std::endl;
 
-    for (int i = 0; i < wifiAccessPoints->size; ++i) {
-      cout << wifiAccessPoints->wifi_access_points[i]->to_string() << endl;
+    for (int i = 0; i < wifi_access_points->size; ++i) {
+      cout << wifi_access_points->wifi_access_points[i]->to_string() << endl;
     }
-  }
-
-  if (is_json_mode && !is_dev_mode) {
+  } else if (is_json_mode) {
     cout << "[";
-    for (int i = 0; i < wifiAccessPoints->size; ++i) {
-      cout << wifiAccessPoints->wifi_access_points[i]->to_json();
+    for (int i = 0; i < wifi_access_points->size; ++i) {
+      cout << wifi_access_points->wifi_access_points[i]->to_json();
+      cout << (i == wifi_access_points->size - 1 ? "" : ",");
     }
     cout << "]";
   }

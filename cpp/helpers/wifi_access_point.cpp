@@ -9,9 +9,9 @@ string WifiAccessPoint::to_string() {
 }
 
 string WifiAccessPoint::to_json() {
-  return R"({"access_point_name": ")" + WifiAccessPoint::access_point_name + R"(",)"
-         R"("mac_address": ")" + WifiAccessPoint::mac_address + R"(",)"
-         R"("is_hidden": ")" + (WifiAccessPoint::is_hidden ? "true" : "false") + R"("})";
+  return R"({"accessPointName": ")" + WifiAccessPoint::access_point_name + R"(",)"
+         R"("macAddress": ")" + WifiAccessPoint::mac_address + R"(",)"
+         R"("isHidden": ")" + (WifiAccessPoint::is_hidden ? "true" : "false") + R"("})";
 }
 
 string WifiAccessPoint::get_access_point_name() {

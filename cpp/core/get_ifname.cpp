@@ -18,5 +18,5 @@ string get_ifname() {
     if_freenameindex(if_nidxs);
   }
 
-  return nullptr;
+  return {};
 }
