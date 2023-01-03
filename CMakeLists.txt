@@ -8,6 +8,8 @@ set(LIBRARIES "")
 
 option(ENABLE_NETWORK "Enable network support" ON)
 
+list(APPEND LIBRARIES -lstdc++)
+
 add_executable(wlan_scanner2
         src/main.cpp
 
