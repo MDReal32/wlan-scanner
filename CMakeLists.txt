@@ -13,12 +13,12 @@ list(APPEND LIBRARIES -lstdc++)
 add_executable(wlan_scanner2
         src/main.cpp
 
-        src/core/get_ifname.cpp src/core/get_ifname.h
-        src/core/scan_wireless_network.cpp src/core/scan_wireless_network.h
+        cpp/core/get_ifname.cpp cpp/core/get_ifname.h
+        cpp/core/scan_wireless_network.cpp cpp/core/scan_wireless_network.h
 
-        src/helpers/wifi_access_point.cpp src/helpers/wifi_access_point.h
+        cpp/helpers/wifi_access_point.cpp cpp/helpers/wifi_access_point.h
 
-        src/utils/exists_in_arg.cpp src/utils/exists_in_arg.h)
+        cpp/utils/exists_in_arg.cpp cpp/utils/exists_in_arg.h)
 
 find_package("Libiw")
 
