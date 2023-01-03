@@ -6,8 +6,8 @@ string get_data(bool dev_mode, bool json_mode) {
   WifiAccessPoints *wifi_access_points = scan_wireless_network(ifname);
 
   if (dev_mode) {
-    buffer << "Scan completed:" << std::endl << "Found " << wifi_access_points->size << " access point"
-              << (wifi_access_points->size == 1 ? "" : "s") << std::endl;
+    buffer << "Scan completed:" << endl << "Found " << wifi_access_points->size << " access point"
+              << (wifi_access_points->size == 1 ? "" : "s") << endl;
 
     for (int i = 0; i < wifi_access_points->size; ++i) {
       buffer << wifi_access_points->wifi_access_points[i]->to_string() << endl;
