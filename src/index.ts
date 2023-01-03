@@ -1,4 +1,9 @@
-// @ts-ignore
-import { rootHandler } from "../build/Release/wlan_scanner.node";
+import { getAccessPoints } from "./utils/getAccessPoints";
 
-console.log(rootHandler());
+(async () => {
+  // infinite loop on 1 second interval
+  while (true) {
+    console.log(getAccessPoints().length);
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+  }
+})();
